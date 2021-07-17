@@ -1,13 +1,12 @@
 {
-  "name": "browser",
+  "name": "0l-system-web",
   "version": "1.0.0",
-  "main": "index.js",
-  "author": "Weera Wu",
-  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "live-server --watch=../public,../src --mount=/:src public",
+    "start": "live-server --mount=/:src public"
+  },
   "dependencies": {
     "live-server": "^1.2.1"
-  },
-  "scripts": {
-    "start": "live-server"
   }
 }

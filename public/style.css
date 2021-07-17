@@ -1,0 +1,8 @@
+figure {
+  display: inline-block;
+}
+
+figcaption {
+  text-align: center;
+  text-transform: lowercase;
+}

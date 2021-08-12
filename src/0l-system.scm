@@ -1,14 +1,5 @@
+;; Based on Graphical Applications of L-Systems by Przemyslaw Prusinkiewicz
 ;; http://algorithmicbotany.org/papers/applications-of-l-systems-to-computer-imagery.pdf
-
-(define nil '())
-
-(define alphabets '(A B))
-
-(define axiom '(A))
-
-(define productions
-  '((A -> A B)
-    (B -> A)))
 
 (define (predecessor production)
   (car production))

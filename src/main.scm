@@ -1,7 +1,7 @@
 (define (load-verbose filename)
   (display (string-append "Loading " filename " ... "))
   (load filename)
-  (display "done.")
-  (newline))
+  (display "done.\n"))
 
-(load-verbose "operation-test.scm")
+(load-verbose "integration.scm")
+(load-verbose "koch-island.scm")

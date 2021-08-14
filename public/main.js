@@ -20,8 +20,9 @@ class Plane {
 
     function getContext(canvas) {
       const ctx = canvas.getContext('2d');
-      // https://stackoverflow.com/a/33499668
-      ctx.setTransform(1, 0, 0, -1, 0, canvas.height);
+      // rotate the plane so 90-degree angle points up
+      ctx.translate(canvas.width, canvas.height);
+      ctx.rotate(Math.PI);
       return ctx;
     }
   }
@@ -77,11 +78,11 @@ class Turtle {
   }
 
   turnLeft(a) {
-    this.move(0, a);
+    this.move(0, -a);
   }
 
   turnRight(a) {
-    this.move(0, -a);
+    this.move(0, a);
   }
 }
 
@@ -99,8 +100,11 @@ class State {
 
 function main() {
   // const plane = new Plane('A Plane', 500, 500);
-  // const turtle = plane.createTurtle();
+  // const turtle = plane.createTurtle(250, 250, 90);
   // turtle.forward(100);
+  // turtle.turnRight(90);
+  // turtle.forward(200);
+  // turtle.drawSelf();
 }
 
 if (document.readyState === 'loading') {

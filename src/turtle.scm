@@ -19,7 +19,7 @@
       (cond ((eq? alphabet 'F) (js-invoke turtle "forward" d))
             ((eq? alphabet '+) (js-invoke turtle "turnRight" a))
             ((eq? alphabet '-) (js-invoke turtle "turnLeft" a))
-            (else (error "Unknown alphabet"))))
+            (else 'ignored)))
     (for-each respond word))
   (define (dispatch m)
     (cond ((eq? m 'state) state)

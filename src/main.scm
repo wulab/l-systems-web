@@ -5,3 +5,4 @@
 
 (load-verbose "integration.scm")
 (load-verbose "koch-island.scm")
+(load-verbose "hilbert-curve.scm")

@@ -26,23 +26,19 @@ class Plane {
       return ctx;
     }
   }
-
-  createTurtle(x, y, a) {
-    const state = new State(x, y, a);
-    return new Turtle(this, state);
-  }
 }
 
 class Turtle {
-  constructor(plane, state) {
-    const ctx = plane.ctx;
-
-    ctx.beginPath();
-    ctx.moveTo(state.x, state.y);
-
+  constructor(plane) {
     this.plane = plane;
-    this.state = state;
-    this.ctx = ctx;
+    this.ctx = plane.ctx;
+    this.ctx.beginPath();
+    this.setState(plane.width/2, plane.height/2, 90);
+  }
+
+  setState(x, y, a) {
+    this.ctx.moveTo(x, y);
+    this.state = new State(x, y, a);
   }
 
   drawSelf() {
@@ -100,7 +96,7 @@ class State {
 
 function main() {
   // const plane = new Plane('A Plane', 500, 500);
-  // const turtle = plane.createTurtle(250, 250, 90);
+  // const turtle = new Turtle(plane);
   // turtle.forward(100);
   // turtle.turnRight(90);
   // turtle.forward(200);

@@ -10,4 +10,7 @@
     (+ -> +)
     (- -> -)))
 
-(interpret (derive axiom 3) (make-state 250 250 90) 3 90)
+(define turtle (make-turtle-on-plane "Koch island" 500 500))
+
+((turtle 'set-state) (make-state 250 250 90))
+((turtle 'interpret) (derive axiom 3) 2 90)

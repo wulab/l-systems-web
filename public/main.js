@@ -31,13 +31,12 @@ class Plane {
 class Turtle {
   constructor(plane) {
     this.plane = plane;
-    this.ctx = plane.ctx;
-    this.ctx.beginPath();
+    this.plane.ctx.beginPath();
     this.setState(plane.width/2, plane.height/2, 90);
   }
 
   setState(x, y, a) {
-    this.ctx.moveTo(x, y);
+    this.plane.ctx.moveTo(x, y);
     this.state = new State(x, y, a);
   }
 
@@ -49,7 +48,7 @@ class Turtle {
     );
 
     if (!State.samePosition(this.state, newState)) {
-      this.ctx.lineTo(newState.x, newState.y);
+      this.plane.ctx.lineTo(newState.x, newState.y);
     }
 
     this.state = newState;
@@ -73,21 +72,21 @@ class Turtle {
   }
 
   drawPath() {
-    this.ctx.stroke();
-    this.ctx.closePath();
+    this.plane.ctx.stroke();
+    this.plane.ctx.closePath();
   }
 
   drawSelf() {
-    this.ctx.save();
-    this.ctx.beginPath();
-    this.ctx.translate(this.state.x, this.state.y);
-    this.ctx.rotate((Math.PI/180) * this.state.a);
-    this.ctx.moveTo(0, 0);
-    this.ctx.lineTo(-20, 8);
-    this.ctx.lineTo(-20, -8);
-    this.ctx.closePath();
-    this.ctx.fill();
-    this.ctx.restore();
+    this.plane.ctx.save();
+    this.plane.ctx.beginPath();
+    this.plane.ctx.translate(this.state.x, this.state.y);
+    this.plane.ctx.rotate((Math.PI/180) * this.state.a);
+    this.plane.ctx.moveTo(0, 0);
+    this.plane.ctx.lineTo(-20, 8);
+    this.plane.ctx.lineTo(-20, -8);
+    this.plane.ctx.closePath();
+    this.plane.ctx.fill();
+    this.plane.ctx.restore();
   }
 }
 

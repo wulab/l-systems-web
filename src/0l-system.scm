@@ -1,5 +1,5 @@
 ;; Based on Graphical Applications of L-Systems by Przemyslaw Prusinkiewicz
-;; http://algorithmicbotany.org/papers/applications-of-l-systems-to-computer-imagery.pdf
+;; http://algorithmicbotany.org/papers/graphical-applications.pdf
 
 (define (predecessor production)
   (car production))

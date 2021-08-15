@@ -8,7 +8,9 @@
   (cdr (cdr production)))
 
 (define (rewrite alphabet)
-  (successor (assq alphabet productions)))
+  (if (assq alphabet productions)
+      (successor (assq alphabet productions))
+      (list alphabet)))
 
 (define (generate word)
   (if (null? word)

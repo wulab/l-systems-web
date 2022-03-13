@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "build": "mkdir -p dist && cp src/* public/* dist",
     "dev": "live-server --watch=../public,../src --mount=/:src public",
     "start": "live-server --mount=/:src public"
   },
